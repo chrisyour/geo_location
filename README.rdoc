@@ -2,12 +2,13 @@
 
 Geo Locate your users by their IP using either hostip.info or maxmind.com.
 
+
 == Installation
 
-Gemfile:
+gem install geo_location
 
-gem 'geo_location', :git => 'git://github.com/chrisyour/geo_location.git'
 
+== Configuration
 
 config/initializers/geo_location_config.rb:
 
@@ -18,9 +19,10 @@ unless GeoLocation == nil
   # Max Mind (paid)
   # For more information visit: http://www.maxmind.com/app/city
   # GeoLocation::use = :maxmind
-  # GeoLocation::key = 'YOUR MAXMIND.COM LICENSE KEY'
+  # GeoLocation::key = 'YOUR MaxMind.COM LICENSE KEY'
   # GeoLocation::test = 'US,NY,Jamaica,40.676300,-73.775200' # Use this location while you test
 end
+
 
 == Example
 
@@ -32,6 +34,7 @@ puts ip[:country] # => UNITED STATES
 puts ip[:country_code] # => US
 puts ip[:latitude] # => 40.676300
 puts ip[:longitude] # => -73.775200
+
 
 == Copyright
 
