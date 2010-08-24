@@ -1,6 +1,6 @@
 = Geo Location
 
-Geo Locate your users by their IP using either hostip.info or maxmind.com.
+Geo Locate your users using their IP address via hostip.info or maxmind.com.
 
 
 == Installation

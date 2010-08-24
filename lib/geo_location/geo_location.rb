@@ -16,7 +16,7 @@ module GeoLocation
     end
     
     # == Sample text output from Max Mind
-    #   CA,AB,Edmonton,53.549999,-113.500000
+    #   US,NY,Jamaica,40.676300,-73.775200
     
     def maxmind(ip)
       unless GeoLocation::test.empty?
