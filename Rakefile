@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "geo_location"
-    gem.summary = %Q{Geo Locate your users using their IP address via hostip.info or maxmind.com.}
-    gem.description = %Q{Geo}
+    gem.summary = %Q{Geo-locate your users using their IP address via hostip.info or maxmind.com.}
+    gem.description = %Q{Geo-locate your users using their IP address via hostip.info or maxmind.com.}
     gem.email = "chris@ignitionindustries.com"
     gem.homepage = "http://github.com/chrisyour/geo_location"
     gem.authors = ["Chris Your"]
