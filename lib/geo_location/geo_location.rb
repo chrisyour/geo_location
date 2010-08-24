@@ -19,9 +19,9 @@ module GeoLocation
     #   US,NY,Jamaica,40.676300,-73.775200
     
     def maxmind(ip)
-      unless GeoLocation::test.nil? || GeoLocation::test.empty?
-        puts "WARNING: GeoLocation is using the test location: #{GeoLocation::test}"
-        location = GeoLocation::test.split(',')
+      unless GeoLocation::dev.nil? || GeoLocation::dev.empty?
+        puts "WARNING: GeoLocation is using the dev location: #{GeoLocation::dev}"
+        location = GeoLocation::dev.split(',')
       else
         url = "http://geoip3.maxmind.com/b?l=#{GeoLocation::key}&i=#{ip}"
         uri = URI.parse(url)

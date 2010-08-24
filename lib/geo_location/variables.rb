@@ -1,9 +1,9 @@
 module GeoLocation
   @@use = :hostip
   @@key = ''
-  @@test = ''
+  @@dev = ''
 
-  [:use, :key, :test].each do |sym|
+  [:use, :key, :dev].each do |sym|
     class_eval <<-EOS, __FILE__, __LINE__
       def self.#{sym}
         if defined?(#{sym.to_s.upcase})
