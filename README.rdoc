@@ -12,28 +12,28 @@ gem install geo_location
 
 config/initializers/geo_location_config.rb:
 
-unless GeoLocation == nil
-  # Hostip (free)
-  GeoLocation::use = :hostip
-  
-  # Max Mind (paid)
-  # For more information visit: http://www.maxmind.com/app/city
-  # GeoLocation::use = :maxmind
-  # GeoLocation::key = 'YOUR MaxMind.COM LICENSE KEY'
-  # GeoLocation::test = 'US,NY,Jamaica,40.676300,-73.775200' # Use this location while you test
-end
+	unless GeoLocation == nil
+		# Hostip (free)
+		GeoLocation::use = :hostip
+		
+		# Max Mind (paid)
+		# For more information visit: http://www.maxmind.com/app/city
+		# GeoLocation::use = :maxmind
+		# GeoLocation::key = 'YOUR MaxMind.COM LICENSE KEY'
+		# GeoLocation::test = 'US,NY,Jamaica,40.676300,-73.775200' # Use this location while you test
+	end
 
 
 == Example
 
-ip = GeoLocation.find('24.24.24.24') # => {:city=>"Jamaica", :region=>"NY", :country=>"US", :latitude=>"40.676300", :longitude=>"-73.775200"}
+	ip = GeoLocation.find('24.24.24.24') # => {:city=>"Jamaica", :region=>"NY", :country=>"US", :latitude=>"40.676300", :longitude=>"-73.775200"}
 
-puts ip[:city] # => Sugar Grove
-puts ip[:region] # => IL
-puts ip[:country] # => UNITED STATES
-puts ip[:country_code] # => US
-puts ip[:latitude] # => 40.676300
-puts ip[:longitude] # => -73.775200
+	puts ip[:city] # => Sugar Grove
+	puts ip[:region] # => IL
+	puts ip[:country] # => UNITED STATES
+	puts ip[:country_code] # => US
+	puts ip[:latitude] # => 40.676300
+	puts ip[:longitude] # => -73.775200
 
 
 == Copyright
