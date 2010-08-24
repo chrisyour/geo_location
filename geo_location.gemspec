@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = %q{geo_location}
-  s.version = "0.1.1"
+  s.version = "0.1.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Chris Your"]
   s.date = %q{2010-08-24}
-  s.description = %q{Geo}
+  s.description = %q{Geo-locate your users using their IP address via hostip.info or maxmind.com.}
   s.email = %q{chris@ignitionindustries.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -35,7 +35,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
-  s.summary = %q{Geo Locate your users using their IP address via hostip.info or maxmind.com.}
+  s.summary = %q{Geo-locate your users using their IP address via hostip.info or maxmind.com.}
   s.test_files = [
     "test/helper.rb",
      "test/test_geo_location.rb"
