@@ -7,7 +7,7 @@ begin
     gem.name = "geo_location"
     gem.summary = %Q{TODO: one-line summary of your gem}
     gem.description = %Q{Geo}
-    gem.email = "chris@wilderness.co"
+    gem.email = "chris@ignitionindustries.com"
     gem.homepage = "http://github.com/chrisyour/geo_location"
     gem.authors = ["Chris"]
     gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
