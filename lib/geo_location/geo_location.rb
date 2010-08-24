@@ -19,7 +19,7 @@ module GeoLocation
     #   US,NY,Jamaica,40.676300,-73.775200
     
     def maxmind(ip)
-      unless GeoLocation::test.empty?
+      unless GeoLocation::test.nil? || GeoLocation::test.empty?
         puts "WARNING: GeoLocation is using the test location: #{GeoLocation::test}"
         location = GeoLocation::test.split(',')
       else
