@@ -1,5 +1,6 @@
 module GeoLocation
-  File.open("VERSION", "r") do |infile|
+  file = File.join(File.dirname(__FILE__), '../../VERSION' )
+  File.open(file, "r") do |infile|
     VERSION = infile.gets
   end
 end
