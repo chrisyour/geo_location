@@ -1,9 +1,11 @@
 module GeoLocation
   @@use = :hostip
-  @@key = ''
-  @@dev = ''
+  @@key = nil
+  @@dev = nil
+  @@dev_ip = nil
+  @@timezones = {}
 
-  [:use, :key, :dev].each do |sym|
+  [:use, :key, :dev, :dev_ip, :timezones].each do |sym|
     class_eval <<-EOS, __FILE__, __LINE__
       def self.#{sym}
         if defined?(#{sym.to_s.upcase})
@@ -18,4 +20,5 @@ module GeoLocation
       end
     EOS
   end
+  
 end

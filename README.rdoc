@@ -1,6 +1,6 @@
 = Geo Location
 
-Geo Locate your users using their IP address via hostip.info or maxmind.com.
+Easily geo-locate your users using their IP address via hostip.info or maxmind.com. Super simple to setup, super simple to use. I've found that the data from HostIP and Max Mind differ slightly. Max Mind (paid) has a more complete and accurate database at the moment, but HostIP is growing. For more information about Max Mind visit http://www.maxmind.com/app/city and for more information about HostIP visit http://hostip.info
 
 
 == Installation
@@ -20,13 +20,15 @@ config/initializers/geo_location_config.rb:
 
 == HostIP Example
 
-  ip = GeoLocation.find('24.24.24.24') # => {:city=>"Liverpool", :region=>"NY", :country=>"US", :latitude=>"43.1059", :longitude=>"-76.2099"}
+  location = GeoLocation.find('24.24.24.24') # => {:ip=>"24.24.24.24", :city=>"Liverpool", :region=>"NY", :country=>"US", :latitude=>"43.1059", :longitude=>"-76.2099", :timezone=>"America/New_York"}
   
-  puts ip[:city] # => Liverpool
-  puts ip[:region] # => NY
-  puts ip[:country] # => US
-  puts ip[:latitude] # => 43.1059
-  puts ip[:longitude] # => -76.2099
+  puts location[:ip] # => 24.24.24.24
+  puts location[:city] # => Liverpool
+  puts location[:region] # => NY
+  puts location[:country] # => US
+  puts location[:latitude] # => 43.1059
+  puts location[:longitude] # => -76.2099
+  puts location[:timezone] # => America/New_York
 
 
 == Max Mind Configuration
@@ -40,6 +42,8 @@ config/initializers/geo_location_config.rb:
 	GeoLocation::key = 'YOUR MaxMind.COM LICENSE KEY'
 	# This location will be used while you develop rather than hitting the maxmind.com api
 	# GeoLocation::dev = 'US,NY,Jamaica,40.676300,-73.775200' # IP: 24.24.24.24
+	# Use this IP in development mode (development and testing will give you 127.0.0.1)
+	# GeoLocation::dev_ip = '24.24.24.24'
   end
 
 
@@ -47,13 +51,15 @@ config/initializers/geo_location_config.rb:
 
   GeoLocation::use = :maxmind
   GeoLocation::key = 'YOUR MaxMind.COM LICENSE KEY'
-  ip = GeoLocation.find('24.24.24.24') # => {:city=>"Jamaica", :region=>"NY", :country=>"US", :latitude=>"40.676300", :longitude=>"-73.775200"}
+  location = GeoLocation.find('24.24.24.24') # => {:ip=>"24.24.24.24", :city=>"Jamaica", :region=>"NY", :country=>"US", :latitude=>"40.676300", :longitude=>"-73.775200", :timezone=>"America/New_York"}
 
-  puts ip[:city] # => Jamaica
-  puts ip[:region] # => NY
-  puts ip[:country] # => US
-  puts ip[:latitude] # => 40.676300
-  puts ip[:longitude] # => -73.775200
+  puts location[:ip] # => 24.24.24.24
+  puts location[:city] # => Jamaica
+  puts location[:region] # => NY
+  puts location[:country] # => US
+  puts location[:latitude] # => 40.676300
+  puts location[:longitude] # => -73.775200
+  puts location[:timezone] # => America/New_York
 
 
 == Copyright

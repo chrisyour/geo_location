@@ -1,3 +1,5 @@
 module GeoLocation
-  VERSION = "0.1.4"
+  File.open("VERSION", "r") do |infile|
+    VERSION = infile.gets
+  end
 end
