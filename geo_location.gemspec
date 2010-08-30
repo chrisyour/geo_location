@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{geo_location}
-  s.version = "0.3.3"
+  s.version = "0.4.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Chris Your"]
-  s.date = %q{2010-08-26}
+  s.date = %q{2010-08-29}
   s.description = %q{Geo-locate your users using their IP address via hostip.info or maxmind.com.}
   s.email = %q{chris@ignitionindustries.com}
   s.extra_rdoc_files = [
@@ -25,10 +25,12 @@ Gem::Specification.new do |s|
      "VERSION",
      "geo_location.gemspec",
      "lib/geo_location.rb",
+     "lib/geo_location/countries.rb",
+     "lib/geo_location/countries.txt",
      "lib/geo_location/geo_location.rb",
+     "lib/geo_location/setup.rb",
      "lib/geo_location/timezones.rb",
      "lib/geo_location/timezones.txt",
-     "lib/geo_location/variables.rb",
      "lib/geo_location/version.rb",
      "test/helper.rb",
      "test/test_geo_location.rb"
