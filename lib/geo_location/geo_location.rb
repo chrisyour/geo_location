@@ -72,13 +72,14 @@ module GeoLocation
     def data_from_maxmind_http_response(ip, body)
       location = body.split(',')
       data = {}
-      data[:country] = location[0]
+      data[:country_code] = location[0]
+      data[:country] = country(location[0])
       data[:region] = location[1]
       data[:city] = location[2]
       data[:latitude] = location[3]
       data[:longitude] = location[4]
       data[:ip] = ip
-      data[:timezone] = timezone(data[:country], data[:region])
+      data[:timezone] = timezone(data[:country_code], data[:region])
       data
     end
     
@@ -99,7 +100,8 @@ module GeoLocation
             data[:city] = element.text.split(', ')[0].titleize
             data[:region] = element.text.split(', ')[1]
           when 'countryAbbrev'
-            data[:country] = element.text
+            data[:country_code] = element.text
+            data[:country] = country(element.text)
         end
       end
       
@@ -114,7 +116,7 @@ module GeoLocation
       end
       
       data[:ip] = ip
-      data[:timezone] = timezone(data[:country], data[:region])
+      data[:timezone] = timezone(data[:country_code], data[:region])
       
       data
     end

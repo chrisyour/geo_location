@@ -20,12 +20,13 @@ config/initializers/geo_location_config.rb:
 
 == HostIP Example
 
-  location = GeoLocation.find('24.24.24.24') # => {:ip=>"24.24.24.24", :city=>"Liverpool", :region=>"NY", :country=>"US", :latitude=>"43.1059", :longitude=>"-76.2099", :timezone=>"America/New_York"}
+  location = GeoLocation.find('24.24.24.24') # => {:ip=>"24.24.24.24", :city=>"Liverpool", :region=>"NY", :country=>"United States", :country_code=>"US", :latitude=>"43.1059", :longitude=>"-76.2099", :timezone=>"America/New_York"}
   
   puts location[:ip] # => 24.24.24.24
   puts location[:city] # => Liverpool
   puts location[:region] # => NY
-  puts location[:country] # => US
+  puts location[:country] # => United States
+  puts location[:country_code] # => US
   puts location[:latitude] # => 43.1059
   puts location[:longitude] # => -76.2099
   puts location[:timezone] # => America/New_York
@@ -51,12 +52,13 @@ config/initializers/geo_location_config.rb:
 
   GeoLocation::use = :maxmind
   GeoLocation::key = 'YOUR MaxMind.COM LICENSE KEY'
-  location = GeoLocation.find('24.24.24.24') # => {:ip=>"24.24.24.24", :city=>"Jamaica", :region=>"NY", :country=>"US", :latitude=>"40.676300", :longitude=>"-73.775200", :timezone=>"America/New_York"}
+  location = GeoLocation.find('24.24.24.24') # => {:ip=>"24.24.24.24", :city=>"Jamaica", :region=>"NY", :country=>"United States", :country_code=>"US", :latitude=>"40.676300", :longitude=>"-73.775200", :timezone=>"America/New_York"}
 
   puts location[:ip] # => 24.24.24.24
   puts location[:city] # => Jamaica
   puts location[:region] # => NY
-  puts location[:country] # => US
+  puts location[:country] # => United States
+  puts location[:country_code] # => US
   puts location[:latitude] # => 40.676300
   puts location[:longitude] # => -73.775200
   puts location[:timezone] # => America/New_York

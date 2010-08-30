@@ -20,8 +20,12 @@ class TestGeoLocation < Test::Unit::TestCase
       assert_equal '24.24.24.24', @location[:ip]
     end
     
-    should "find US country" do
-      assert_equal 'US', @location[:country]
+    should "find US country_code" do
+      assert_equal 'US', @location[:country_code]
+    end
+    
+    should "find United States country" do
+      assert_equal 'United States', @location[:country]
     end
     
     should "find NY region" do
@@ -64,8 +68,12 @@ class TestGeoLocation < Test::Unit::TestCase
       assert_equal '24.24.24.24', @location[:ip]
     end
     
+    should "find US country_code" do
+      assert_equal 'US', @location[:country_code]
+    end
+    
     should "find US country" do
-      assert_equal 'US', @location[:country]
+      assert_equal 'United States', @location[:country]
     end
     
     should "find NY region" do
@@ -117,6 +125,22 @@ class TestGeoLocation < Test::Unit::TestCase
     should "have defined timezones" do
       GeoLocation.timezone('CA', 'AB')
       assert_equal false, GeoLocation::timezones.empty?
+    end
+    
+  end
+  
+  context 'on countries' do
+    
+    should "find country Canada" do
+      assert_equal 'Canada', GeoLocation.country('CA')
+    end
+    
+    should "find country United States" do
+      assert_equal 'United States', GeoLocation.country('US')
+    end
+    
+    should "find country United Kingdom" do
+      assert_equal 'United Kingdom', GeoLocation.country('GB')
     end
     
   end
