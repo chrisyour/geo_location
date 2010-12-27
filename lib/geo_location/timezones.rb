@@ -18,7 +18,7 @@ module GeoLocation
             zones.each do |z|
               zone = z.split("  ")
               country = zone[0].to_sym
-              region = zone[1].to_sym
+              region = zone[1].empty? ? '' : zone[1].to_sym
               value = zone[2]
               
               data[country] = {} if data[country].nil?
