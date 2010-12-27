@@ -1,6 +1,5 @@
 require 'net/http'
-require 'rexml/document'
-include REXML
+require 'nokogiri'
 
 module GeoLocation
   
@@ -86,33 +85,24 @@ module GeoLocation
     # == Handle http response data from HostIP
     #   xml formatted body
     def data_from_hostip_http_response(ip, body)
-      xml = body
-      location = REXML::Document.new(xml)
+      location = Nokogiri::HTML.parse(body)
+      
+      hostip = location.at("hostip")
+      return nil if hostip.nil?
       
       data = {}
       
-      hostip = XPath.first( location, "//Hostip" )
-      return nil if hostip.nil?
-      
-      hostip.elements.each do |element|
-        case element.name
-          when 'name'
-            data[:city] = element.text.split(', ')[0].titleize
-            data[:region] = element.text.split(', ')[1]
-          when 'countryAbbrev'
-            data[:country_code] = element.text
-            data[:country] = country(element.text)
-        end
-      end
-      
-      coords = XPath.first( location, "//gml:Point" )
-      coords.elements.each do |element|
-        case element.name
-          when 'coordinates'
-            coordinates = element.text.split(',')
-            data[:latitude] = coordinates[1]
-            data[:longitude] = coordinates[0]
-        end
+      element = hostip.at('name')
+      data[:city] = element.text.split(', ')[0].titleize
+      data[:region] = element.text.split(', ')[1]
+
+      element = hostip.at('countryabbrev')
+      data[:country_code] = element.text
+      data[:country] = country(element.text)
+
+      element = hostip.at( "point coordinates" )
+      if element
+        data[:latitude], data[:longitude] = element.text.split(',')
       end
       
       data[:ip] = ip
