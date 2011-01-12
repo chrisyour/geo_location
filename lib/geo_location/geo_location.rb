@@ -102,7 +102,7 @@ module GeoLocation
 
       element = hostip.at( "point coordinates" )
       if element
-        data[:latitude], data[:longitude] = element.text.split(',')
+        data[:longitude], data[:latitude] = element.text.split(',')
       end
       
       data[:ip] = ip
