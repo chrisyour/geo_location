@@ -1,9 +1,3 @@
 module GeoLocation
-  file = File.join(File.dirname(__FILE__), '../../VERSION' )
-  File.open(file, "r") do |infile|
-    while (line = infile.gets)
-      VERSION = line.gsub(/\n/,"")
-      break
-    end
-  end
+  VERSION = "0.4.1"
 end
