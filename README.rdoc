@@ -8,6 +8,12 @@ Easily geo-locate your users using their IP address via hostip.info or maxmind.c
   gem install geo_location
 
 
+== Gemspec (using Bundler)
+Add geo_location to your Gemspec.
+
+	gem 'geo_location'
+
+
 == HostIP Configuration
 
 config/initializers/geo_location_config.rb:
