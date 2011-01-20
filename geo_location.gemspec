@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Chris Your"]
   s.email       = ["chris@ignitionindustries.com"]
   s.homepage    = "http://github.com/chrisyour/geo_location"
-  s.summary     = %q{Geo-locate your users using their IP address via hostip.info or maxmind.com.}
-  s.description = %q{Geo-locate your users using their IP address via hostip.info or maxmind.com.}
+  s.summary     = %q{Geo Location allows you to geo-locate your users using their IP address via hostip.info or maxmind.com.}
+  s.description = %q{Geo Location allows you to geo-locate your users using their IP address via hostip.info or maxmind.com. This Ruby gem is dead simple to use and configure. Checkout the README and post any issue (or pull requests) to us on GitHub.}
   
   s.add_development_dependency "thoughtbot-shoulda"
   s.add_development_dependency "nokogiri"
