@@ -144,22 +144,4 @@ class TestGeoLocation < Test::Unit::TestCase
     end
     
   end
-  
-  context 'on localhost' do
-    
-    setup do
-      #GeoLocation::use = :hostip
-      GeoLocation::use = :maxmind
-      GeoLocation::key = 'sNHKg3eUWYoT'
-      GeoLocation::dev = nil
-      GeoLocation::dev_ip = nil
-      @location = GeoLocation.find('127.0.0.1')
-    end
-    
-    should "not work properly" do
-      puts @location.inspect
-      assert_equal "nothing", @location[:city]
-    end
-  end
-  
 end
