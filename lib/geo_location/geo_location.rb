@@ -22,7 +22,7 @@ module GeoLocation
     
     def maxmind(ip)
       if GeoLocation::dev.nil? || GeoLocation::dev.empty?
-        url = "http://geoip3.maxmind.com/b?l=#{GeoLocation::key}&i=#{ip}"
+        url = "https://geoip.maxmind.com/b?l=#{GeoLocation::key}&i=#{ip}"
         uri = URI.parse(url)
         data_from_maxmind_http_response(ip, Net::HTTP.get_response(uri).body)
       else
